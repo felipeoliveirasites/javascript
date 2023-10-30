@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <!-- Evento é tudo aquilo que possa acontecer com esta div(qualquer elemento)
+    o mais comum eventos de mouse: 
+    »1.mouseenter(parou mouse dentro da div);
+    »2.mousemove(mover o mouse dentro da div)
+    »3.mousedown(cliquei e segurei)
+    »4.mouseup(momento que soltar o botão do mouse)
+    »5.click(apertar e soltar rapidamento clique inteiro)
+    »6.mouseout(mover o mouse pra fora da div)
+    •Existe outros, estes não são os únicos!
+    •Se por acaso você der uma pesquisada nos eventos que podem acontecer dentro de elementos em JavaScript vai ficar muito surpreso
+    Nem todos os elementos são compatíveis com todos os eventos
+    Touch events com os eventos dos celulares <> dos mouseevents
+    Os eventos coisas que eu posso fazer com a minha div (elemento) exemplifiquei com o mouse 
+    pra disparar um evento, pra tratar um evento eu preciso te explicar antes o que é uma função ou uma funcionalidade
+    função em JavaScript: conjunto de códigos (de linhas) que vão se executadas só quando o evento ocorrer; exemplo vou programar 10 linhas estas linhas chamamos de bloco, não vão se executadas automaticamente, todos os nossos códigos até o momento foram executados automaticamente, carregava a página e ele executava o código, agora esta 10 linhas este bloco ele só vai ocorrer por exemplo quando eu clicar dentro da div, estas 10 linhas vão se disparadas somente quando o evento ocorrer
+    primeiro passo é colocar dentro de um bloco, um bloco em JavaScript é delimitado entre sinais de chaves {} este bloco você tem que nomear ele como uma function, então você coloca a palavra function {} que quer dizer função antes do bloco no JavaScrip existe função anônima função sem nome function{} só que para que o metódo posso funcionar eu tenho que dar um nome para esta função e geralmente os nomes das funções são ações que agente pode fazer, geralmente funções de eventos eles são nomes de ação function ação(){} vai colocar o nome da ação que vai acontecer e abri e fecha parênteses e opcionalmente você pode colocar dentro destes parênteses alguns parâmetros pode ser um e pode ser vários ( vamos ver mais pra frente)
+    function ação(param){}-->
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background: rgb(42, 136, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interaja... 
+        
+    </div>
+    <script>
+         var a = window.document.getElementById("area");
+         a.addEventListener('click', clicar);
+         a.addEventListener('mouseenter', entrar);
+         a.addEventListener('mouseout', sair); //isto é ele vai ficar prestando atenção em um determinado evento, meu html vai ficar limpo e meu JavaScript que vai tratar de ligar 
+        function clicar(){// com inner text vc só muda o texto com innerHTML vc consegue colocar tags HTML também    
+            //objeto chamado a ele vai ser uma ligação com id area que esta dentro do HTML e este objeto vai mudar o conteúdo dele pra Clicou!
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+        function entrar () {
+            a.innerText = "Entrou!"
+        }
+        function sair () {
+            a.innerText = "Saiu!"
+            a.style.background = 'rgb(42, 136, 42)'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa...</title>
+<style>
+    body {
+        background-color: rgb(104, 104, 173);
+        color: white;
+        font: normal 25pt arial;
+         }
+         h1 {
+            color: rgb(255, 219, 22);
+         } /* Comentário em CSS */
+</style>
+</head>
+<body>
+    <h1>Olá mundo!</h1> <!-- Isto é um comentário-->
+    <p>Já me livrei da maldição</p>
+    <script>
+      var n1 = Number(window.prompt("Digite um número: ")) // trata normalmente aqui como string caracteristica do comando window.prompt
+      var n2 = Number(window.prompt("Digite outro número: ")) // pode ser só parseInt sem o Number. Agora tem a versão Number sem o parse e ele se vira e sabe se é inteiro ou real"
+      var s = n1 +n2
+      window.alert("A soma dos valores é " + 
+      String(s)) // concatenação 
+      // (number + number) para adição
+      // (string + string) para concatenação
+      window.alert(`A soma entre ${n1} e ${n2} é igual a ` + 
+      s.toString())
+      window.alert(`A soma entre ${n1} e ${n2} é igual a ${s} `)
+      var s = "JavaScript"
+      print `Eu estou aprendendo ${s}` //Usa template string
+      //s.length  //quantos caracteres a string tem
+      //s.toUpperCase() tudo para 'MAIÚSCULAS'
+      //stoLowerCase() tudo para 'minusculas'
+      //n1.toFixed(2)
+      // n1.replace
+      //n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})    
+      //n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+      //n1.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})
+    </script>   
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: rgb(87, 140, 201);
+            color:white;
+            font: normal 18px Arial 
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1> 
+    <h1>Teste</h1> 
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendoa usar <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <div id="msg1">Clique em mim</div>
+    <div name="msg">Clique em mim</div>
+    <div class="msg">Clique aqui</div>
+    <div id="msg2">Clique aqui!</div>
+    <div class="msg2">Clique aqui!</div>
+    <script>
+        //DOM - Document Object Model (Modelo de Objetos para Documentos) conjunto de objetos dentro do seu navegador que vai dar acesso que vai dar acesso aos seus components internos do seu website, o DOM ele não funciona dentro node js por exemplo. O DOM esta presente quando estou rodando JavaScript dentro do meu navegador
+        //Importante conhecer e saber fazer sua arvóre DOM do seu site, Básicamente esta arvore DOM começa da Raiz e este raiz dentro do navegador agente chama de window, tudo dentro de JavaScript esta dentro de um objeto chamado window (janela)
+        //Dentro do windon temos vários objetos por exemplo:
+        //  location   document history
+        // location : diz qual a localização do seu site a url a página atual qual foi a página anterior
+        // document vamos usar muito - documento atual
+        // history vai guardando de onde vc veio para onde vc vai facilita na navegação dentro do seu site
+        //existe muitos outros objetos só citei 3 por questão de praticidade e espaço
+        
+        //dentro do document existe o objeto html e dentro de html temos 2 objetos 2 filhos (child): head(cabeçalho) e o body(corpo) e html é um pai (parent) de body e html e child de document é uma árvore hieráquica
+        //dentro de head várias tag: meta, title        
+        //dentro de body temos: h1 p p  div
+        // e dentro do segundo parágrafo eu tenho um filho que é strong
+        window.document.write('Olá, Mundo! <br> ')
+        window.document.write(window.document.charset + "<br>")
+        window.document.write(window.navigator.appName + "<br>")
+        window.document.write(window.document.URL + "<br>")
+        //tudo na árvore DOM são elementos e eu posso selecionar estes elementos para eu poder navegar dentro da minha árvore DOM e existe vários metódos para isto
+        //Metodos: Selecionando por:
+        //Marca (por tag) em document
+        //getElementsByTagName() consegue selecionar mais de um objeto pois existe mais de um objeto do mesmo tipo
+        //ID
+        //Nome  
+        //Classe
+        //Seletor (CSS recurso mais recente não está presente em todos os ecmascript mas nas mais recentes está, todos os navegadores atualizados já tem acesso a este recurso)
+        var p1 = window.document.getElementsByTagName('p')[1] 
+        window.document.write("Está escrito assim: " + p1.innerHTML +"<br>")
+        document.getElementsByTagName('h1')[1].innerHTML = "estudos com Dom" + "<br>"  
+        document.getElementsByTagName("h1")[1].style.color = "black"
+        p1.style.color = 'blue'
+        var corpo = window.document.body
+        corpo.style.backgroundColor = 'black'
+        document.write(p1.innerHTML)
+        //window.alert(p1.innerText)
+        var d = window.document.getElementById('msg1')
+        d.style.background = "green"
+        d.innerText = "estou aguardando..."
+        document.getElementById('msg').innerText = "Olá, Mundo!"
+        var nam = window.document.getElementsByName('msg')[0]    
+        nam.innerText = "Olá...!"
+        var class0 = window.document.getElementsByClassName('msg')[0]
+        class0.innerText = "Olá Class..."
+        //por Seletor: querySelector(); querySelectorAll()(o plural)
+        //mais prático para alterações rápidas no meu site
+        //metódo mais recente/ navegadores mais antigos que rodam ecmascript mais antigo não vão ter suporte a ele mas se máquina esta tudo atualizada tudo em dia sem problema nenhum
+        var query0 = window.document.querySelector('div#msg2')
+        query0.innerText = 'Olá, mundo  !'
+        query0.style.color = 'blue'
+        query0.style.background = 'white'
+        var queryclass = window.document.querySelector('div.msg2')
+        queryclass.innerText = 'Olá que query selector por div e class'
+        queryclass.style.color = 'red'
+        queryclass.style.background = 'white'
+        //aqui foi dado os fundamentos de DOM e mostrado 5 maneiras de selecionar objetos (elementos na verdade que são elementos de DOM), mostramos alguns exemplos para poder selecionar de maneiras diferentes mas a base é sempre a mesma
+        </script>
+</body>
+</html> 

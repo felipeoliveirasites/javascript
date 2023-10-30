@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício proposto na aula 11 (009)</title>
+</head>
+<body>
+    Qual o país que você vive? <input type="text" id="vive" name="vive">
+    <input type="button" value="Confirmar »»" onclick="confirmar()">
+    <div id="res"></div>
+    <script>
+       
+     /* function confirmar() {
+        var txtvive = window.document.querySelector('input#vive').value
+        var txtres = window.document.querySelector('div#res')  
+        txtres.innerHTML = `<p>Vivendo em ${txtvive}</p>`
+
+            if (txtvive == 'Brasil') {
+                txtres.innerHTML += 'Você é Brasileiro!'
+            } else {
+                txtres.innerHTML += 'Você é Estrangeiro!'
+            } 
+        } */
+       function confirmar() {
+            var vive = window.document.querySelector('input#vive')
+            var txtres = window.document.querySelector('div#res')
+            var txtvive = String(vive.value)
+            txtres.innerHTML = `<p>Vivendo em ${txtvive}</p>`
+
+           
+            if (txtvive == 'Brasil' || txtvive=='brasil' || txtvive=='Brasileiro' || 
+            txtvive=='brasileiro' || txtvive=='BRASIL' || txtvive=='BRASILEIRO' || txtvive=='Brasileira' 
+            || txtvive=='brasileira' || txtvive=='BRASILEIRA' ) {
+               
+                txtres.innerHTML = `<p>Vivendo no Brasil</p>`
+                txtres.innerHTML += 'Você é Brasileiro!'
+                
+        } else {
+            txtres.innerHTML += 'Você é Estrangeiro!'
+        }
+        
+        } 
+    </script>
+</body>
+</html>
