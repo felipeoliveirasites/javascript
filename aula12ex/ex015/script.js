@@ -18,7 +18,9 @@ function verificar() {
        } else if(radsex[1].checked) {
             gênero = "Mulher"
         }
-      res.innerHTML = `Detectamos ${gênero} com ${idade} anos`
-      res.innerHTML.st
+        res.innerHTML = `Detectamos ${gênero} com ${idade} anos`
+        res.style.textAlign = 'center'
        }
     }
+
+    
